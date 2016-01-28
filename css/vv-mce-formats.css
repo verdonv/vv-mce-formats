@@ -3,3 +3,9 @@
 	text-indent: -3em;
 	clear: both;
 }
+
+.vv_hanging_indent_noclear {
+	margin-left: 3em;
+	text-indent: -3em;
+	clear: none;
+}

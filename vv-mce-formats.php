@@ -24,7 +24,8 @@ License: GPL2
 				// array( 'title' => 'Heading 3', 'block' => 'h3' ),
 				// array( 'title' => 'Heading 4', 'block' => 'h4' ),
 				// array( 'title' => 'Hanging Indent', 'block' => 'p', 'styles' => array( 'margin-left' => '3em', 'text-indent' => '-3em' ) )
-				array( 'title' => 'Hanging Indent', 'block' => 'p', 'classes' => 'vv_hanging_indent' )
+				array( 'title' => 'Hanging Indent - Clear Floats', 'block' => 'p', 'classes' => 'vv_hanging_indent' ),
+				array( 'title' => 'Hanging Indent - No Clear', 'block' => 'p', 'classes' => 'vv_hanging_indent_noclear' )
 			))
 		);
 		$init['style_formats'] = json_encode( $style_formats );
@@ -64,5 +65,17 @@ License: GPL2
 		add_editor_style( $editor_style_url );
 	}
 	add_action( 'after_setup_theme', 'vv_mce_mod_editor_styles' );
+
+	// disable the removal of div and br tags when toggling from HTML to Visual
+	function vv_change_mce_init_options( $init ) {
+		$add = 'div[*],br[*]';
+		if ( isset( $init['extended_valid_elements'] ) ) {
+			$init['extended_valid_elements'] .= ',' . $add;
+		} else {
+			$init['extended_valid_elements'] = $add;
+		}
+		return $init;
+	}
+	add_filter('tiny_mce_before_init', 'vv_change_mce_init_options');
 
 ?>
