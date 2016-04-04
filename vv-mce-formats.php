@@ -24,6 +24,7 @@ License: GPL2
 				// array( 'title' => 'Heading 3', 'block' => 'h3' ),
 				// array( 'title' => 'Heading 4', 'block' => 'h4' ),
 				// array( 'title' => 'Hanging Indent', 'block' => 'p', 'styles' => array( 'margin-left' => '3em', 'text-indent' => '-3em' ) )
+				array( 'title' => 'Callout', 'block' => 'blockquote', 'wrapper' => true, 'classes' => 'vv_callout' ),
 				array( 'title' => 'Hanging Indent - Clear Floats', 'block' => 'p', 'classes' => 'vv_hanging_indent' ),
 				array( 'title' => 'Hanging Indent - No Clear', 'block' => 'p', 'classes' => 'vv_hanging_indent_noclear' )
 			))

@@ -9,3 +9,12 @@
 	text-indent: -3em;
 	clear: none;
 }
+
+blockquote.vv_callout {
+	margin: 1em 2em 1em 2em;
+	padding: 2em;
+	border: 1px black solid;
+	font-style: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
